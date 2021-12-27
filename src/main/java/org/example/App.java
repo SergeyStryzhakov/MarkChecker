@@ -42,7 +42,7 @@ public class App {
         });
         Document document = documentBuilder.parse(args[0]);
         NodeList students = document.getElementsByTagName("student");
-        System.out.println("Count of student fields is " + students.getLength());
+        System.out.println("Students: " + students.getLength());
         String studentName;
         for (int i = 0; i < students.getLength(); i++) {
             int subjectCount = 0;
@@ -68,7 +68,6 @@ public class App {
                     }
                     if ("average".equals(info.getNodeName())) {
                         averageFromFile = info.getChildNodes().item(0).getTextContent();
-
                         averageCount = String.format(Locale.ROOT, "%.1f", (double) mark / subjectCount);
                         if (!averageCount.equals(averageFromFile)) {
                             info.getChildNodes().item(0).setTextContent(averageCount);
@@ -90,18 +89,10 @@ public class App {
     }
 
 
-    private static void writeXml(Document doc,
-                                 OutputStream output)
-            throws TransformerException, UnsupportedEncodingException {
-
+    private static void writeXml(Document doc, OutputStream output)
+            throws TransformerException {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
-
         Transformer transformer = transformerFactory.newTransformer();
-        //new StreamSource(new File(FORMAT_DTD)));
-
-        // pretty print
-        //transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        //transformer.setOutputProperty(OutputKeys.STANDALONE, "yes");
         transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "group.dtd");
         DOMSource source = new DOMSource(doc);
         StreamResult result = new StreamResult(output);
