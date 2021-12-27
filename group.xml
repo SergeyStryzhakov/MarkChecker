@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE group SYSTEM "group.dtd">
+<group>
+ <student lastname="Petrov" groupnumber="5A" firstname="Ivan">
+  <subject title="Math" mark="5"></subject>
+  <subject title="Geo" mark="3"></subject>
+  <subject title="Lang" mark="2"></subject>
+  <average>3.3</average>
+  </student>
+  <student firstname="Vasya" lastname="Markov" groupnumber="5A">
+  <subject title="Math" mark="3"></subject>
+  <subject title="Geo" mark="3"></subject>
+  <subject title="Lang" mark="3"></subject>
+  <average>3.0</average>
+  </student>
+  <student firstname="Anton" lastname="Chekhov" groupnumber="5A">
+  <subject title="Math" mark="4"></subject>
+  <subject title="Lang" mark="5"></subject>
+  <average>5.3</average>
+  </student>
+ <student firstname="Maksim" lastname="Antonov" groupnumber="5A">
+  <subject title="Math" mark="4"></subject>
+  <subject title="Lang" mark="5"></subject>
+  <subject title="Chemistry" mark="5"/>
+  <subject title="Physics" mark="5"/>
+  <average>5.3</average>
+ </student>
+</group>
